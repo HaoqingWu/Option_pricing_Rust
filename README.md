@@ -1,4 +1,4 @@
-# Option_pricing_calculator
+# Option calculator
 
 A simple option calculator based on the Black-Scholes model.
 
