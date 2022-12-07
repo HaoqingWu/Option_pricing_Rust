@@ -106,7 +106,7 @@ impl EuropeanOption {
     
     //Newton–Raphson with ‘‘Brenner & Subrahmanyam formula’’ as initial point
     pub fn implied_vol(&self) -> f64{
-        // initialize the implied vol
+        
         let val = match self.V{
             Some(v) => v,
             None  => panic!("To compute implied volatility, observed price is needed!"),
@@ -138,7 +138,7 @@ impl EuropeanOption {
             };
             - option.S * (option.tau / (2.0 * PI)).sqrt() * E.powf(-option.d1().powf(2.0) / 2.0)
         };
-
+        // the Brenner-Subrahmanyam intial guess
         let guess: f64 = (PI / self.tau).sqrt() 
                         * (2.0 * val - self.S + E.powf(-self.r * self.tau) * self.K) 
                         / ( 2.0 * self.S);
