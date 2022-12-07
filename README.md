@@ -8,8 +8,8 @@ The current version provides the following methods.
 - Compute the implied volatility.
 
 ## Example
-We define an option struct to define store the parameters of an option.
-Note that we set option price `V` and volatility `vol` as Option enums.
+We define an option struct to store the parameters of an option.
+Note that we set option price `V` and volatility `vol` as of type `Option<f64>`.
 ```rust
 let option = European::EuropeanOption{
         V: None,
@@ -50,5 +50,3 @@ Compute the implied volatility using Newton-Raphson.
 ```rust
 observed_price.implied_vol()
 ```
-
-
